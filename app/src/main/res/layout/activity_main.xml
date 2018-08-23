@@ -4,15 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
+        android:id="@+id/numberTV"
+        android:layout_width="123dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="126dp"
+        android:text="@string/_0"
+        android:textAlignment="center"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toTopOf="@+id/count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginEnd="10dp"
+        android:onClick="toast"
+        android:text="@string/toast"
+        app:layout_constraintBaseline_toBaselineOf="@+id/count"
+        app:layout_constraintEnd_toStartOf="@+id/count"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="188dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="count"
+        android:text="@string/count"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/random"
+        app:layout_constraintStart_toEndOf="@+id/toast"
+        app:layout_constraintTop_toBottomOf="@+id/numberTV" />
+
+    <Button
+        android:id="@+id/random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:onClick="random"
+        android:layout_marginEnd="6dp"
+        android:text="@string/random"
+        app:layout_constraintBaseline_toBaselineOf="@+id/count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/count" />
 
 </android.support.constraint.ConstraintLayout>
